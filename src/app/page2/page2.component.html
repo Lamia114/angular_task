@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Page</title>
+    <style>
+        header {
+            text-align: center;
+            background-color:blue;
+            padding: 20px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Marks Page</h1>
+    </header>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Marks (out of 100)</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td [ngClass]="{'text-success': student.marks > 50, 'text-danger': student.marks <= 50}">
+          {{ student.marks }}
+        </td>
+        <td>
+          <span *ngIf="student.marks > 50" class="badge bg-success">PASS</span>
+          <span *ngIf="student.marks <= 50" class="badge bg-danger">FAIL</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>

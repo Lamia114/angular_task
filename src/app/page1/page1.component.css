@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  
+  .right-content {
+    margin-left: 20px;
+  }
+  
+  .card-body{
+padding-left: 30%;
+  }
